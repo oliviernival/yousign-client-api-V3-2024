@@ -508,6 +508,7 @@ class NvlYousignClientV3
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_URL => sprintf('%s/signature_requests/%s/activate', $this->apiBaseUrlWslash, $this->signatureRequestId),
+            CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_HTTPHEADER => [
                 sprintf('Authorization: Bearer %s', $this->apikey),
